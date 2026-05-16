@@ -1,3 +1,4 @@
+import { server } from '@strapi/strapi/admin/test';
 import { mergeConfig, type UserConfig } from 'vite';
 
 export default (config: UserConfig) => {
@@ -8,5 +9,11 @@ export default (config: UserConfig) => {
         '@': '/src',
       },
     },
+    server: {
+      port: 1337,
+      strictPort: false,
+      host: "0.0.0.0",
+      allowedHosts: ["localhost", "academy-cms.flookaa.com"],
+    }
   });
 };
