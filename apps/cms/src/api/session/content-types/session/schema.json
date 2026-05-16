@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessions",
+  "info": {
+    "singularName": "session",
+    "pluralName": "sessions",
+    "displayName": "Session"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "scheduledAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "meetingUrl": {
+      "type": "string"
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "sessions"
+    }
+  }
+}

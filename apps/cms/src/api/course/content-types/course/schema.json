@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": "Quranic / Islamic studies course"
+  },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "titleAr": {
+      "type": "string",
+      "required": true
+    },
+    "descriptionAr": {
+      "type": "text",
+      "required": true
+    },
+    "thumbnailUrl": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "discountedPrice": {
+      "type": "decimal"
+    },
+    "durationWeeks": {
+      "type": "integer",
+      "required": true
+    },
+    "difficultyLevel": {
+      "type": "enumeration",
+      "enum": ["BEGINNER", "INTERMEDIATE", "ADVANCED"],
+      "required": true
+    },
+    "isCertified": {
+      "type": "boolean",
+      "default": false
+    },
+    "instructor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::instructor-profile.instructor-profile",
+      "inversedBy": "courses"
+    },
+    "lessons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lesson.lesson",
+      "mappedBy": "course"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lessons",
+  "info": {
+    "singularName": "lesson",
+    "pluralName": "lessons",
+    "displayName": "Lesson"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "titleAr": {
+      "type": "string",
+      "required": true
+    },
+    "sequenceNo": {
+      "type": "integer",
+      "required": true
+    },
+    "isLocked": {
+      "type": "boolean",
+      "default": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["LIVE", "VIDEO", "PDF"],
+      "required": true
+    },
+    "durationMins": {
+      "type": "integer"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "lessons"
+    },
+    "sessions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::session.session",
+      "mappedBy": "lesson"
+    }
+  }
+}
