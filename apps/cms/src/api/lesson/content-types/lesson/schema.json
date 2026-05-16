@@ -4,41 +4,41 @@
   "info": {
     "singularName": "lesson",
     "pluralName": "lessons",
-    "displayName": "Lesson"
+    "displayName": "Lesson",
+    "description": "Lesson inside a module"
   },
-  "options": { "draftAndPublish": false },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
-    "titleAr": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "sequenceNo": {
+    "order": {
       "type": "integer",
-      "required": true
+      "default": 0
     },
-    "isLocked": {
-      "type": "boolean",
-      "default": true
+    "videoUrl": {
+      "type": "string"
+    },
+    "durationMinutes": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
     },
     "type": {
       "type": "enumeration",
-      "enum": ["LIVE", "VIDEO", "PDF"],
+      "enum": ["video", "reading", "quiz"],
+      "default": "video",
       "required": true
     },
-    "durationMins": {
-      "type": "integer"
-    },
-    "course": {
+    "module": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::course.course",
+      "target": "api::module.module",
       "inversedBy": "lessons"
-    },
-    "sessions": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::session.session",
-      "mappedBy": "lesson"
     }
   }
 }

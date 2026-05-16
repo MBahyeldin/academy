@@ -1,28 +1,42 @@
 {
-  "name": "@noor/cms",
-  "version": "1.0.0",
+  "name": "@academy/cms",
+  "version": "0.1.0",
   "private": true,
+  "description": "Modern Islamic Academy CMS (Strapi 5)",
   "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/strapi": "^5.0.0",
-    "@strapi/plugin-users-permissions": "^5.0.0",
-    "pg": "^8.11.0"
+    "@strapi/plugin-cloud": "5.46.0",
+    "@strapi/plugin-users-permissions": "5.46.0",
+    "@strapi/strapi": "5.46.0",
+    "better-sqlite3": "12.8.0",
+    "pg": "^8.13.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
-    "@strapi/typescript-utils": "^5.0.0",
-    "@types/node": "^20.0.0",
-    "typescript": "^5.4.0"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
   },
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
+    "node": ">=20.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "noor-quranic-academy-cms"
+    "uuid": "f64c12db-45d0-494e-9b1d-942409f60fb0",
+    "installId": "5ad084940cbced3d7058dbe8a565aaa39e8175a66d1d65d99783d744a52369b8"
   }
 }

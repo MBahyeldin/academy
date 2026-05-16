@@ -1,7 +1,11 @@
-export default ({ env }: { env: (key: string, fallback?: unknown) => unknown }) => ({
+import type { Core } from '@strapi/strapi';
+
+const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Server => ({
   host: env('HOST', '0.0.0.0'),
-  port: env('PORT', 1337),
+  port: env.int('PORT', 1337),
   app: {
-    keys: (env('APP_KEYS', '') as string).split(','),
+    keys: env.array('APP_KEYS'),
   },
-})
+});
+
+export default config;

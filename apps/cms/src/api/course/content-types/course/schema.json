@@ -5,55 +5,58 @@
     "singularName": "course",
     "pluralName": "courses",
     "displayName": "Course",
-    "description": "Quranic / Islamic studies course"
+    "description": "Course offered on the academy"
   },
-  "options": { "draftAndPublish": true },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
-    "titleAr": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "descriptionAr": {
-      "type": "text",
-      "required": true
+    "description": {
+      "type": "richtext"
     },
-    "thumbnailUrl": {
-      "type": "string"
-    },
-    "category": {
-      "type": "string",
+    "level": {
+      "type": "enumeration",
+      "enum": ["beginner", "intermediate", "advanced"],
+      "default": "beginner",
       "required": true
     },
     "price": {
       "type": "decimal",
-      "required": true
+      "min": 0,
+      "default": 0
     },
-    "discountedPrice": {
-      "type": "decimal"
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
     },
-    "durationWeeks": {
-      "type": "integer",
-      "required": true
-    },
-    "difficultyLevel": {
-      "type": "enumeration",
-      "enum": ["BEGINNER", "INTERMEDIATE", "ADVANCED"],
-      "required": true
-    },
-    "isCertified": {
-      "type": "boolean",
-      "default": false
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "courses"
     },
     "instructor": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::instructor-profile.instructor-profile",
+      "target": "api::instructor.instructor",
       "inversedBy": "courses"
     },
-    "lessons": {
+    "modules": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::lesson.lesson",
+      "target": "api::module.module",
+      "mappedBy": "course"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
       "mappedBy": "course"
     }
   }
