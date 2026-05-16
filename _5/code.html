@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb68e",
+                        "on-surface": "#121c2a",
+                        "tertiary-container": "#444542",
+                        "on-primary-fixed": "#002117",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#763300",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#2d2f2c",
+                        "tertiary-fixed": "#e3e3de",
+                        "on-tertiary-fixed-variant": "#464744",
+                        "secondary-container": "#fd8a42",
+                        "background": "#f9f9ff",
+                        "tertiary-fixed-dim": "#c7c7c2",
+                        "on-primary": "#ffffff",
+                        "primary": "#003527",
+                        "on-primary-container": "#80bea6",
+                        "on-secondary-fixed": "#331200",
+                        "on-tertiary-container": "#b2b2ae",
+                        "secondary": "#9b4500",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#064e3b",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#b0f0d6",
+                        "inverse-primary": "#95d3ba",
+                        "outline": "#707974",
+                        "surface-container": "#e6eeff",
+                        "on-background": "#121c2a",
+                        "on-secondary-container": "#682c00",
+                        "surface-container-highest": "#d9e3f7",
+                        "primary-fixed-dim": "#95d3ba",
+                        "surface-tint": "#2b6954",
+                        "outline-variant": "#bfc9c3",
+                        "surface-container-high": "#dee9fd",
+                        "on-surface-variant": "#404944",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#273140",
+                        "surface-variant": "#d9e3f7",
+                        "surface-container-low": "#eff3ff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdbca",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "surface-dim": "#d0daef",
+                        "surface": "#f9f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "gutter": "24px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "base": "4px",
+                        "margin-desktop": "80px",
+                        "margin-mobile": "16px",
+                        "sm": "16px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "display-lg-mobile": ["Noto Serif"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "display-lg": ["Noto Serif"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "body-md": ["IBM Plex Sans"],
+                        "label-lg": ["IBM Plex Sans"],
+                        "headline-sm": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "42px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .mashrabiya-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0, 53, 39, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface mashrabiya-bg">
+<!-- TopAppBar -->
+<nav class="flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-50 bg-surface dark:bg-inverse-surface shadow-sm fixed top-0 left-0">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 scale-95 active:opacity-80 transition-all hover:bg-surface-variant/50 transition-colors text-on-surface-variant dark:text-on-surface-variant" data-icon="notifications">notifications</button>
+</div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">أكاديمية الدراسات القرآنية</h1>
+<div class="flex items-center">
+<button class="material-symbols-outlined p-2 scale-95 active:opacity-80 transition-all hover:bg-surface-variant/50 transition-colors text-on-surface-variant dark:text-on-surface-variant" data-icon="arrow_forward">arrow_forward</button>
+</div>
+</nav>
+<main class="pt-16 pb-32 max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="mt-8 rounded-xl overflow-hidden relative shadow-lg">
+<div class="h-64 md:h-96 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A grand cinematic banner for a Quranic study course, featuring a beautifully calligraphed Arabic manuscript of the Hadith An-Nawawi. The lighting is warm and golden, reminiscent of early morning sunlight streaming through an arched library window. The composition is clean and focused on professional academic excellence, utilizing a palette of deep emerald greens and rich gold accents on a cream parchment background. The atmosphere is serene and intellectually stimulating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZYw1lBUM8J8WQmOr2_JHD6k7eoKdTH6JkmcGLhdMnbC9OqTYSn2D7zibeXoDOOpkp3U0_qPeVchkUtx504n-ywt1QfHZGboFhav56GBlv4TYWp0BcEDJn8fqnA2NvF8uUNO_xiXGL_n62op5m6jsaJYyO1OsfIGAQ0eUXTTLjwAf20sfU6yIpkauuEOqnTq340LUDgNdVKPoAhlJqvvGxQ-s6Rd0-pDAv0A_w2N7cl4UzzSkQtjhj9-181sK5EstdFU4Cw6xZ9N8J"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-md">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm w-fit mb-2">الدراسات الحديثية</span>
+<h2 class="text-on-primary font-headline-md text-headline-md mb-2">شرح الأربعين النووية</h2>
+<div class="flex items-center gap-4 text-on-primary/90 text-label-lg font-label-lg">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="groups">groups</span> 1,240 طالب</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 12 أسبوع</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-lg">
+<!-- Main Content Column -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Core Info Chips -->
+<div class="flex flex-wrap gap-sm">
+<div class="bg-surface-container-high border border-outline-variant px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<span class="font-label-lg text-label-lg">المستوى: متوسط</span>
+</div>
+<div class="bg-surface-container-high border border-outline-variant px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+<span class="font-label-lg text-label-lg">اللغة: العربية</span>
+</div>
+<div class="bg-surface-container-high border border-outline-variant px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-lg text-label-lg">شهادة معتمدة</span>
+</div>
+</div>
+<!-- Course Description -->
+<div class="space-y-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">عن المقرر</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        يعد كتاب الأربعين النووية من أهم المتون التي جمعت أصول الدين وقواعده. يتناول هذا المقرر شرحاً تفصيلياً للأحاديث النبوية المختارة من قبل الإمام النووي رحمه الله، مع استخراج الفوائد التربوية والعلمية والعملية لكل حديث بأسلوب معاصر ومنهجية أكاديمية رصينة.
+                    </p>
+</div>
+<!-- Syllabus (Accordion Style) -->
+<div class="space-y-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">منهج الدراسة</h3>
+<div class="space-y-base">
+<div class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-4 flex items-center justify-between cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center font-label-lg">١</span>
+<span class="font-label-lg text-label-lg">مقدمة في علوم الحديث وأهمية المتن</span>
+</div>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-4 flex items-center justify-between cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center font-label-lg">٢</span>
+<span class="font-label-lg text-label-lg">شرح حديث: "إنما الأعمال بالنيات"</span>
+</div>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-4 flex items-center justify-between cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="bg-primary text-on-primary w-8 h-8 rounded-full flex items-center justify-center font-label-lg">٣</span>
+<span class="font-label-lg text-label-lg">شرح حديث جبريل عليه السلام</span>
+</div>
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Instructor Bio -->
+<div class="bg-surface-container rounded-2xl p-md border border-outline-variant flex flex-col md:flex-row gap-md items-center md:items-start">
+<img class="w-24 h-24 rounded-full object-cover border-2 border-primary shadow-sm" data-alt="A portrait of a distinguished Islamic scholar in his late 50s, wearing traditional scholarly attire with a subtle green trim. He is standing in front of a wall of ancient leather-bound books in a warm, lit library. The portrait is high-quality with a shallow depth of field, reflecting wisdom and professional academic authority in an Islamic Academy setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWSDhcI6t_FS3uvwXm8WXT5SAy_gxTMZEgknmle-X3FmEeZkPcN03yM6-lfDBlthZTatn_DRGdeCXlO3IvbCWafHj7-zgEZ2OnlIIpHeJFwGz5OK6hcEooFxfFJoWDVtwkSdnGKO9ez4vnrpOA6QYaHtFLehXFRO5ja0qnaeMSuLIFBujok10C-umnwSPnPEOemJPUfpIRSKE4GJYyMwGCEvoalM6Q7bhKRgRZQSimIEuCUp-pPibs5a7i8N_yju_zv6HgkvxPFLpb"/>
+<div class="text-center md:text-right space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-primary">د. أحمد عبد الرحمن</h4>
+<p class="font-label-lg text-label-lg text-secondary">أستاذ الحديث وعلومه - جامعة المدينة</p>
+<p class="font-body-md text-body-md text-on-surface-variant">مؤلف لعدة كتب في السنة النبوية، ولديه خبرة تزيد عن ٢٠ عاماً في تدريس المتون العلمية في الحرمين الشريفين والمنصات الرقمية.</p>
+<button class="text-primary font-label-lg flex items-center gap-1 hover:underline mt-2">
+                            عرض الملف الشخصي الكامل
+                            <span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+</div>
+</div>
+<!-- Reviews -->
+<div class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-primary">آراء الطلاب</h3>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-secondary">4.9</span>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-sm">
+<div class="bg-surface p-sm border border-outline-variant rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-bold text-on-secondary-container">ع</div>
+<div>
+<p class="font-label-lg text-label-lg">علي الكندي</p>
+<p class="text-[10px] text-on-surface-variant">قبل أسبوعين</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"من أفضل الشروح التي استمعت إليها، الشيخ أحمد يتميز بتبسيط المعلومة وربطها بالواقع العملي."</p>
+</div>
+<div class="bg-surface p-sm border border-outline-variant rounded-xl shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed">م</div>
+<div>
+<p class="font-label-lg text-label-lg">مريم العتيبي</p>
+<p class="text-[10px] text-on-surface-variant">قبل شهر</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"الدورة منظمة جداً والمواد المرفقة تساعد كثيراً في الحفظ والمراجعة. جزاكم الله خيراً."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Column -->
+<div class="lg:col-span-4 space-y-md">
+<!-- Pricing & Schedule Card -->
+<div class="bg-surface shadow-lg border border-outline-variant rounded-2xl p-md sticky top-24">
+<div class="text-center pb-md border-b border-outline-variant mb-md">
+<p class="text-label-lg font-label-lg text-on-surface-variant mb-1">رسوم التسجيل</p>
+<h3 class="text-headline-md font-headline-md text-primary">٢٩٩ ر.س</h3>
+<p class="text-label-sm font-label-sm text-secondary line-through opacity-70">٤٥٠ ر.س</p>
+</div>
+<div class="space-y-md">
+<h4 class="font-label-lg font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                            جدول المحاضرات
+                        </h4>
+<div class="space-y-sm">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant border-dashed">
+<span class="font-body-md text-body-md">الأحد (مباشر)</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">٠٨:٠٠ م</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant border-dashed">
+<span class="font-body-md text-body-md">الثلاثاء (مباشر)</span>
+<span class="font-label-lg text-label-lg text-on-surface-variant">٠٨:٠٠ م</span>
+</div>
+</div>
+<div class="space-y-sm pt-md">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="videocam">videocam</span>
+<span class="font-body-md text-body-md">٢٤ ساعة من البث المباشر</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="article">article</span>
+<span class="font-body-md text-body-md">ملفات PDF شاملة لكل حديث</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="all_inclusive">all_inclusive</span>
+<span class="font-body-md text-body-md">وصول مدى الحياة للمحتوى</span>
+</div>
+</div>
+<!-- Desktop Buy Button (Hidden on Mobile) -->
+<button class="hidden md:block w-full bg-primary text-on-primary py-4 rounded-xl font-label-lg text-label-lg shadow-lg hover:shadow-xl transition-all scale-95 active:opacity-90">
+                            سجل الآن في المقرر
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Sticky Enrollment Bar -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface shadow-[0_-2px_20px_rgba(0,0,0,0.1)] p-4 flex items-center justify-between gap-4 border-t border-outline-variant">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-on-surface-variant">السعر الحالي</span>
+<span class="text-headline-sm font-headline-sm text-primary">٢٩٩ ر.س</span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-lg text-label-lg shadow-lg flex-1">
+            سجل الآن
+        </button>
+</div>
+</body></html>

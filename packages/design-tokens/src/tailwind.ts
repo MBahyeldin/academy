@@ -1,0 +1,115 @@
+export const academyTheme = {
+  extend: {
+    colors: {
+      surface: {
+        DEFAULT: "var(--color-surface)",
+        dim: "var(--color-surface-dim)",
+        bright: "var(--color-surface-bright)",
+        "container-lowest": "var(--color-surface-container-lowest)",
+        "container-low": "var(--color-surface-container-low)",
+        container: "var(--color-surface-container)",
+        "container-high": "var(--color-surface-container-high)",
+        "container-highest": "var(--color-surface-container-highest)",
+        variant: "var(--color-surface-variant)",
+        tint: "var(--color-surface-tint)",
+      },
+      "on-surface": {
+        DEFAULT: "var(--color-on-surface)",
+        variant: "var(--color-on-surface-variant)",
+      },
+      "inverse-surface": "var(--color-inverse-surface)",
+      "inverse-on-surface": "var(--color-inverse-on-surface)",
+      outline: {
+        DEFAULT: "var(--color-outline)",
+        variant: "var(--color-outline-variant)",
+      },
+      primary: {
+        DEFAULT: "var(--color-primary)",
+        container: "var(--color-primary-container)",
+        fixed: "var(--color-primary-fixed)",
+        "fixed-dim": "var(--color-primary-fixed-dim)",
+      },
+      "on-primary": {
+        DEFAULT: "var(--color-on-primary)",
+        container: "var(--color-on-primary-container)",
+        fixed: "var(--color-on-primary-fixed)",
+        "fixed-variant": "var(--color-on-primary-fixed-variant)",
+      },
+      "inverse-primary": "var(--color-inverse-primary)",
+      secondary: {
+        DEFAULT: "var(--color-secondary)",
+        container: "var(--color-secondary-container)",
+        fixed: "var(--color-secondary-fixed)",
+        "fixed-dim": "var(--color-secondary-fixed-dim)",
+      },
+      "on-secondary": {
+        DEFAULT: "var(--color-on-secondary)",
+        container: "var(--color-on-secondary-container)",
+        fixed: "var(--color-on-secondary-fixed)",
+        "fixed-variant": "var(--color-on-secondary-fixed-variant)",
+      },
+      tertiary: {
+        DEFAULT: "var(--color-tertiary)",
+        container: "var(--color-tertiary-container)",
+        fixed: "var(--color-tertiary-fixed)",
+        "fixed-dim": "var(--color-tertiary-fixed-dim)",
+      },
+      "on-tertiary": {
+        DEFAULT: "var(--color-on-tertiary)",
+        container: "var(--color-on-tertiary-container)",
+        fixed: "var(--color-on-tertiary-fixed)",
+        "fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+      },
+      error: {
+        DEFAULT: "var(--color-error)",
+        container: "var(--color-error-container)",
+      },
+      "on-error": {
+        DEFAULT: "var(--color-on-error)",
+        container: "var(--color-on-error-container)",
+      },
+      background: "var(--color-background)",
+      "on-background": "var(--color-on-background)",
+    },
+    fontFamily: {
+      serif: ["Noto Serif", "Georgia", "serif"],
+      sans: ["IBM Plex Sans", "system-ui", "sans-serif"],
+    },
+    fontSize: {
+      "display-lg": ["48px", { lineHeight: "60px", letterSpacing: "-0.02em", fontWeight: "700" }],
+      "display-lg-mobile": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+      "headline-md": ["32px", { lineHeight: "42px", fontWeight: "600" }],
+      "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+      "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+      "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+      "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "600" }],
+      "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+    },
+    borderRadius: {
+      sm: "0.25rem",
+      DEFAULT: "0.5rem",
+      md: "0.75rem",
+      lg: "1rem",
+      xl: "1.5rem",
+      full: "9999px",
+    },
+    spacing: {
+      base: "4px",
+      xs: "8px",
+      sm: "16px",
+      md: "24px",
+      lg: "40px",
+      xl: "64px",
+      gutter: "24px",
+      "margin-mobile": "16px",
+      "margin-desktop": "80px",
+    },
+    boxShadow: {
+      sm: "0 1px 2px rgba(0, 53, 39, 0.06)",
+      md: "0 4px 12px rgba(0, 53, 39, 0.08)",
+      lg: "0 12px 32px rgba(0, 53, 39, 0.1)",
+    },
+  },
+} as const;
+
+export default academyTheme;

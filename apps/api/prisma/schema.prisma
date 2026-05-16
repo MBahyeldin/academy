@@ -1,0 +1,81 @@
+// Modern Islamic Academy — transactional store (Postgres)
+// Strapi owns content; this DB owns user state, progress, sessions, achievements, and notifications.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String         @id @default(uuid())
+  strapiId      Int            @unique
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  enrollments   Enrollment[]
+  progress      Progress[]
+  sessions      StudySession[]
+  achievements  Achievement[]
+  notifications Notification[]
+}
+
+model Enrollment {
+  id         String   @id @default(uuid())
+  userId     String
+  courseId   Int
+  enrolledAt DateTime @default(now())
+  status     String   @default("active")
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId])
+}
+
+model Progress {
+  id            String   @id @default(uuid())
+  userId        String
+  courseId      Int
+  percentage    Int      @default(0)
+  lastLessonId  Int?
+  lastStudiedAt DateTime @updatedAt
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId])
+}
+
+model StudySession {
+  id              String   @id @default(uuid())
+  userId          String
+  courseId        Int
+  durationMinutes Int
+  date            DateTime @default(now())
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, date])
+}
+
+model Achievement {
+  id        String   @id @default(uuid())
+  userId    String
+  type      String
+  awardedAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  message   String
+  type      String   @default("info")
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}

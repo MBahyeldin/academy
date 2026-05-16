@@ -1,0 +1,23 @@
+{
+  "name": "academy",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.6",
+  "scripts": {
+    "dev": "concurrently -n cms,api,web -c yellow,cyan,magenta \"pnpm --filter @academy/cms dev\" \"pnpm --filter @academy/api dev\" \"pnpm --filter @academy/web dev\"",
+    "dev:web": "pnpm --filter @academy/web dev",
+    "dev:api": "pnpm --filter @academy/api dev",
+    "dev:cms": "pnpm --filter @academy/cms dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "seed:api": "pnpm --filter @academy/api seed"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

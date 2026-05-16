@@ -1,0 +1,23 @@
+{
+  "name": "@academy/api-client",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./strapi": "./src/strapiClient.ts",
+    "./api": "./src/apiClient.ts"
+  },
+  "files": ["src"],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@academy/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@academy/tsconfig": "workspace:*",
+    "typescript": "^5.6.3"
+  }
+}

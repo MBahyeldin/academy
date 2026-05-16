@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>لوحة تحكم الطالب (سطح المكتب) - Al-Hikmah Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Noto+Serif:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffdbca",
+                        "surface-dim": "#d0daef",
+                        "surface": "#f9f9ff",
+                        "surface-bright": "#f9f9ff",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "on-surface-variant": "#404944",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "surface-variant": "#d9e3f7",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#273140",
+                        "surface-container-low": "#eff3ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#121c2a",
+                        "surface-container-highest": "#d9e3f7",
+                        "primary-fixed-dim": "#95d3ba",
+                        "on-secondary-container": "#682c00",
+                        "surface-container-high": "#dee9fd",
+                        "outline-variant": "#bfc9c3",
+                        "surface-tint": "#2b6954",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#064e3b",
+                        "primary-fixed": "#b0f0d6",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e6eeff",
+                        "outline": "#707974",
+                        "inverse-primary": "#95d3ba",
+                        "primary": "#003527",
+                        "on-primary-container": "#80bea6",
+                        "on-tertiary-container": "#b2b2ae",
+                        "on-secondary-fixed": "#331200",
+                        "secondary": "#9b4500",
+                        "tertiary": "#2d2f2c",
+                        "tertiary-fixed": "#e3e3de",
+                        "secondary-container": "#fd8a42",
+                        "on-tertiary-fixed-variant": "#464744",
+                        "tertiary-fixed-dim": "#c7c7c2",
+                        "on-primary": "#ffffff",
+                        "background": "#f9f9ff",
+                        "on-secondary-fixed-variant": "#763300",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#121c2a",
+                        "secondary-fixed-dim": "#ffb68e",
+                        "tertiary-container": "#444542",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002117"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "margin-desktop": "80px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "xl": "64px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["IBM Plex Sans"],
+                        "body-lg": ["IBM Plex Sans"],
+                        "headline-md": ["Noto Serif"],
+                        "display-lg-mobile": ["Noto Serif"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "display-lg": ["Noto Serif"],
+                        "label-lg": ["IBM Plex Sans"],
+                        "headline-sm": ["Noto Serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "42px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .mashrabiya-overlay {
+            background-image: radial-gradient(circle at 2px 2px, rgba(43, 105, 84, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface-container-low shadow-sm w-full h-20 sticky top-0 z-50">
+<nav class="flex justify-between items-center w-full px-margin-desktop max-w-7xl mx-auto h-full">
+<div class="flex items-center gap-lg">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Al-Hikmah Academy</span>
+<div class="hidden md:flex gap-md">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Courses</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Library</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Scholars</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Pathways</a>
+<a class="font-label-lg text-label-lg text-primary border-b-2 border-secondary font-bold pb-1" href="#">About</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex gap-sm">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-xs" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-xs" data-icon="settings">settings</button>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile avatar" data-alt="A professional headshot of a student with a warm, focused expression, set against a soft-focus academic background. The lighting is bright and natural, reflecting the minimalist and professional aesthetic of the academy. The color palette uses subtle neutral tones to maintain a clean, scholarly feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYuWbVvFXB1ONlDCzWT5iMtYeH4ntzQXm9DXS2k-lH-hh4vidI9zZj7phE37PQXIUjJ61gOQnTfI9R-Mk-OMFUB2juUjhoE0b88AHo7Dh-YiGvhjjsCpVfjSETXo2wS8Kcbwe6f3WbHgZyOe8xL_RymJcdFU3QBV3Tk-rkuORFRAdNB91tDV0R2zs1p5_BxiDEprF8BNLU8_w-Fa1i2aK6HLPyu_MFPbypLzW4mfnZ1-GmV0SJSgMPVyqxSRxxA3I9W9xrzJpxB57E"/>
+</div>
+<button class="hidden lg:block bg-primary text-on-primary px-md py-xs rounded-lg font-label-lg scale-95 active:scale-100 transition-transform">Enrol Now</button>
+</div>
+</nav>
+</header>
+<main class="max-w-7xl mx-auto px-margin-desktop py-xl">
+<!-- Dashboard Header -->
+<header class="mb-lg">
+<h1 class="font-headline-md text-headline-md text-primary mb-xs">السلام عليكم، أحمد</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">مرحباً بك مجدداً في رحلتك التعليمية. إليك نظرة سريعة على تقدمك اليوم.</p>
+</header>
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Main Content Area (8 Columns) -->
+<div class="col-span-12 lg:col-span-8 space-y-lg">
+<!-- Next Lesson Banner -->
+<section class="relative overflow-hidden rounded-xl bg-primary text-on-primary p-lg shadow-sm border border-primary-container">
+<div class="mashrabiya-overlay absolute inset-0 opacity-10"></div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="space-y-xs text-center md:text-right">
+<span class="inline-block bg-primary-container text-on-primary-container px-sm py-1 rounded-full font-label-sm uppercase">الدرس القادم</span>
+<h2 class="font-headline-sm text-headline-sm">أحكام التجويد: مخارج الحروف</h2>
+<p class="font-body-md text-body-md text-on-primary-container">مع الشيخ د. محمد العتيبي - اليوم الساعة ٦:٠٠ مساءً</p>
+</div>
+<button class="bg-secondary text-on-primary px-xl py-sm rounded-lg font-label-lg shadow-sm hover:bg-secondary-container transition-all active:scale-95">
+                            انضم الآن
+                        </button>
+</div>
+</section>
+<!-- Progress Overview -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant mb-md">إنجاز الحفظ</h3>
+<div class="flex items-center justify-center p-md">
+<!-- Semi-circular radial mockup using CSS borders -->
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-variant" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<span class="absolute font-headline-sm text-primary">٧٢٪</span>
+</div>
+</div>
+<div class="text-center mt-sm">
+<p class="font-label-sm text-on-surface-variant">تم حفظ ١٨ جزءاً من أصل ٣٠</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant shadow-sm">
+<h3 class="font-label-lg text-label-lg text-on-surface-variant mb-md">ساعات الدراسة الأسبوعية</h3>
+<div class="space-y-sm">
+<div class="flex justify-between items-center">
+<span class="font-label-sm">الهدف: ١٥ ساعة</span>
+<span class="font-label-sm text-primary font-bold">١٢.٥ ساعة</span>
+</div>
+<div class="h-3 bg-surface-variant rounded-full overflow-hidden flex flex-row-reverse">
+<div class="h-full bg-primary" style="width: 83%"></div>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span class="text-[10px]">السبت</span>
+<span class="text-[10px]">الأحد</span>
+<span class="text-[10px]">الاثنين</span>
+<span class="text-[10px]">الثلاثاء</span>
+<span class="text-[10px]">الأربعاء</span>
+<span class="text-[10px]">الخميس</span>
+<span class="text-[10px]">الجمعة</span>
+</div>
+</div>
+</div>
+</section>
+<!-- My Courses Grid -->
+<section>
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-sm text-headline-sm text-primary">دوراتي الحالية</h2>
+<button class="text-secondary font-label-lg hover:underline transition-all">عرض الكل</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Course Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm hover:shadow-md transition-all group">
+<div class="h-32 bg-surface-variant relative">
+<img alt="Quran Study" class="w-full h-full object-cover" data-alt="A close-up of an open Quran with elegant calligraphy, resting on a wooden stand in a sunlit room. The scene is captured with a shallow depth of field, emphasizing the texture of the paper and the spiritual ambiance. The light is warm and serene, aligned with the academy's branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2FXqfQ-q7iM8QuEvUd1MvNjsk16R_awq4Oq6fHJAubAeYORzOIiYzotqwldWHdKwvfZogTdDBiws4QqG_7Et3q9f5rDZlNU4Xl3yGVO5wbbNJ0ySTlTLoeLW4dlrlhYDwM9FcsdSRmo15tvTkO5PITQydP6vsfx_wcEOriCIrE__yav1-A14sQwDVjfmxHh5qxtiRftO4USvJC2PB5dPA2xvzITZdU0t9lp93kSDYyWuJ5VbuJJPXoJl2adLvtP_l6BHarijkw8TV"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="p-md space-y-sm">
+<h4 class="font-label-lg text-primary">أصول التفسير المتقدم</h4>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="text-label-sm">د. عبد الله الراجحي</span>
+</div>
+<div class="pt-sm border-t border-outline-variant">
+<div class="flex justify-between items-center mb-1">
+<span class="text-label-sm text-on-surface-variant">تم إنجاز ٤٥٪</span>
+</div>
+<div class="h-1.5 bg-surface-variant rounded-full flex flex-row-reverse">
+<div class="h-full bg-secondary" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Course Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden shadow-sm hover:shadow-md transition-all group">
+<div class="h-32 bg-surface-variant relative">
+<img alt="Arabic Language" class="w-full h-full object-cover" data-alt="A minimalist desk setup with high-quality stationery and a notebook featuring Arabic calligraphy exercises. The workspace is bright and airy, flooded with soft daylight. The aesthetic is clean and academic, reflecting a focused learning environment within the Islamic academy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ8QYj53NG2d7qrdcQJyfyNsxqGSMEcacpogdn3jju7kwuGzsCpJvFLnseGZ_5d6D_B3wmf0F8UpVaowZhpSq69RkTRZW71kD4c0wBttXn2tmpP6vxWoWWst4yDZaluJHPm57YHw16Ivnf4v6O_yRydkHwMln87IMiLkKhn1UY5JAlw8stbuzJ6fc3qahxk-9pEqoyZYD-4vsdH9tDkP7crNo87y55nRW3jhcFwi7bnkSp89MdrAkF9vZPmYyZIPuQM_pGf4BpHU93"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="p-md space-y-sm">
+<h4 class="font-label-lg text-primary">اللغة العربية: النحو الواضح</h4>
+<div class="flex items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person</span>
+<span class="text-label-sm">أ. سارة منصور</span>
+</div>
+<div class="pt-sm border-t border-outline-variant">
+<div class="flex justify-between items-center mb-1">
+<span class="text-label-sm text-on-surface-variant">تم إنجاز ٨٢٪</span>
+</div>
+<div class="h-1.5 bg-surface-variant rounded-full flex flex-row-reverse">
+<div class="h-full bg-secondary" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar (4 Columns) -->
+<aside class="col-span-12 lg:col-span-4 space-y-lg">
+<!-- Achievements Section -->
+<section class="bg-surface-container-high p-md rounded-xl shadow-sm border border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md">الإنجازات</h3>
+<div class="grid grid-cols-3 gap-sm">
+<div class="flex flex-col items-center text-center p-xs bg-surface-container-lowest rounded-lg">
+<div class="w-12 h-12 bg-secondary-fixed rounded-full flex items-center justify-center text-secondary mb-xs">
+<span class="material-symbols-outlined" data-weight="fill">military_tech</span>
+</div>
+<span class="text-[10px] font-bold">مثابر</span>
+</div>
+<div class="flex flex-col items-center text-center p-xs bg-surface-container-lowest rounded-lg">
+<div class="w-12 h-12 bg-primary-fixed rounded-full flex items-center justify-center text-primary mb-xs">
+<span class="material-symbols-outlined" data-weight="fill">menu_book</span>
+</div>
+<span class="text-[10px] font-bold">قارئ نهم</span>
+</div>
+<div class="flex flex-col items-center text-center p-xs bg-surface-container-lowest rounded-lg opacity-50 grayscale">
+<div class="w-12 h-12 bg-surface-variant rounded-full flex items-center justify-center text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<span class="text-[10px] font-bold">المركز الأول</span>
+</div>
+</div>
+</section>
+<!-- Recent Notifications -->
+<section class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-md">آخر التنبيهات</h3>
+<div class="space-y-md">
+<!-- Notification 1 -->
+<div class="flex gap-sm p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border-r-4 border-secondary">
+<div class="bg-secondary-fixed w-10 h-10 rounded-full flex shrink-0 items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">assignment</span>
+</div>
+<div class="space-y-1">
+<p class="text-label-lg font-bold">تم تصحيح الواجب</p>
+<p class="text-label-sm text-on-surface-variant">تم تسليم ملاحظات أستاذ النحو على اختبارك الأخير.</p>
+<span class="text-[10px] text-on-surface-variant/70">منذ ساعتين</span>
+</div>
+</div>
+<!-- Notification 2 -->
+<div class="flex gap-sm p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border-r-4 border-primary">
+<div class="bg-primary-fixed w-10 h-10 rounded-full flex shrink-0 items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">event</span>
+</div>
+<div class="space-y-1">
+<p class="text-label-lg font-bold">تذكير بحلقة الذكر</p>
+<p class="text-label-sm text-on-surface-variant">تبدأ الحلقة الأسبوعية المفتوحة غداً في تمام الساعة ٨ مساءً.</p>
+<span class="text-[10px] text-on-surface-variant/70">منذ ٥ ساعات</span>
+</div>
+</div>
+<!-- Notification 3 -->
+<div class="flex gap-sm p-sm hover:bg-surface-container-low rounded-lg transition-colors cursor-pointer border-r-4 border-surface-variant">
+<div class="bg-surface-variant w-10 h-10 rounded-full flex shrink-0 items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</div>
+<div class="space-y-1">
+<p class="text-label-lg font-bold">تحديث في جدول المحاضرات</p>
+<p class="text-label-sm text-on-surface-variant">يرجى مراجعة الجدول الدراسي المحدث لشهر شعبان.</p>
+<span class="text-[10px] text-on-surface-variant/70">أمس</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-md py-sm text-label-lg text-primary border border-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all">كل الإشعارات</button>
+</section>
+<!-- Help/Support -->
+<div class="bg-primary-container p-md rounded-xl text-on-primary-container relative overflow-hidden">
+<div class="mashrabiya-overlay absolute inset-0 opacity-5"></div>
+<div class="relative z-10 flex items-center gap-md">
+<span class="material-symbols-outlined text-[40px]" data-weight="fill">support_agent</span>
+<div>
+<p class="font-label-lg font-bold">هل تحتاج لمساعدة؟</p>
+<p class="text-label-sm">فريق الدعم الأكاديمي جاهز للرد على استفساراتك.</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full pt-xl pb-md border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop w-full max-w-7xl mx-auto">
+<div class="col-span-1 space-y-sm">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed">Al-Hikmah Academy</span>
+<p class="text-body-md text-on-primary/80">منصة رائدة لتعليم القرآن الكريم والعلوم الإسلامية وفق منهج أكاديمي رصين.</p>
+</div>
+<div class="col-span-1 flex flex-col gap-xs">
+<span class="font-label-lg text-secondary-fixed mb-xs">روابط هامة</span>
+<a class="text-label-sm text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Curriculum</a>
+<a class="text-label-sm text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Scholar Profiles</a>
+<a class="text-label-sm text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Student Portal</a>
+</div>
+<div class="col-span-1 flex flex-col gap-xs">
+<span class="font-label-lg text-secondary-fixed mb-xs">الدعم</span>
+<a class="text-label-sm text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Financial Aid</a>
+<a class="text-label-sm text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Contact Support</a>
+<a class="text-label-sm text-on-primary/80 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="col-span-1 space-y-sm">
+<span class="font-label-lg text-secondary-fixed mb-xs">تواصل معنا</span>
+<div class="flex gap-sm">
+<button class="w-8 h-8 rounded-full bg-on-primary-container/20 flex items-center justify-center hover:bg-secondary-fixed transition-all"><span class="material-symbols-outlined text-[18px]">mail</span></button>
+<button class="w-8 h-8 rounded-full bg-on-primary-container/20 flex items-center justify-center hover:bg-secondary-fixed transition-all"><span class="material-symbols-outlined text-[18px]">share</span></button>
+</div>
+</div>
+</div>
+<div class="mt-xl px-margin-desktop text-center">
+<p class="text-label-sm text-on-primary/60">© 2024 Al-Hikmah Academy for Quranic Studies. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

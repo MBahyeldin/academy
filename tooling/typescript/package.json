@@ -1,0 +1,7 @@
+{
+  "name": "@academy/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "main": "base.json",
+  "files": ["base.json", "node.json", "react.json"]
+}
