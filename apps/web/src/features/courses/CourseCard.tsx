@@ -12,13 +12,17 @@ export function CourseCard({ course }: { course: StrapiCourse }) {
     ? course.reviews.reduce((acc, r) => acc + r.rating, 0) / course.reviews.length
     : course.instructor?.rating ?? 0;
 
+  const strapiBaseUrl = (import.meta as { env?: Record<string, string> }).env?.VITE_STRAPI_URL || "http://localhost:1337";
+  const thumbnailUrl = course.thumbnail ? `${strapiBaseUrl}${course.thumbnail.url}` : null;
+  
+
   return (
-    <Link to={`/courses/${course.id}`} className="group block focus:outline-none">
+    <Link to={`/courses/${course.documentId}`} className="group block focus:outline-none">
       <Card className="overflow-hidden hover:-translate-y-0.5 hover:shadow-md transition-all h-full flex flex-col">
         <div className="aspect-[16/10] bg-gradient-to-br from-primary-container to-surface-tint relative mashrabiya-pattern">
-          {course.thumbnail ? (
+          {thumbnailUrl ? (
             <img
-              src={course.thumbnail}
+              src={thumbnailUrl}
               alt={course.title}
               className="absolute inset-0 w-full h-full object-cover"
             />

@@ -50,14 +50,17 @@ export const StrapiReviewSchema = z.object({
   createdAt: z.string(),
 });
 export type StrapiReview = z.infer<typeof StrapiReviewSchema>;
-
+export const ImageUrlSchema = z.object({
+  url: z.string(),
+});
 export const StrapiCourseSchema = z.object({
   id: z.number(),
   title: z.string(),
   description: z.string().nullable().optional(),
+  documentId: z.string().nullable().optional(),
   level: StrapiLevelSchema,
   price: z.number().nullable().optional(),
-  thumbnail: z.string().nullable().optional(),
+  thumbnail: ImageUrlSchema.nullable().optional(),
   category: StrapiCategorySchema.nullable().optional(),
   instructor: StrapiInstructorSchema.nullable().optional(),
   modules: z.array(StrapiModuleSchema).optional().default([]),
@@ -78,4 +81,6 @@ export const StrapiAuthResponseSchema = z.object({
   jwt: z.string(),
   user: StrapiUserSchema,
 });
+
+
 export type StrapiAuthResponse = z.infer<typeof StrapiAuthResponseSchema>;
